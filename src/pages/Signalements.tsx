@@ -36,7 +36,7 @@ export default function Signalements() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newSujet, setNewSujet] = useState('');
   const [newDescription, setNewDescription] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const fetchSignalements = async () => {
@@ -53,7 +53,7 @@ export default function Signalements() {
 
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    // setIsSubmitting(true);
     try {
       const created = await signalementsApi.create({ 
         sujet: newSujet, 
@@ -66,7 +66,7 @@ export default function Signalements() {
     } catch (err) {
       alert('Erreur lors de la création');
     } finally {
-      setIsSubmitting(false);
+      // setIsSubmitting(false);
     }
   };
 
